@@ -36,7 +36,7 @@ Start the server script and check for errors.
 Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
-'''
+```
  http.server import HTTPServer, BaseHTTPRequestHandler
 from
 content = """
@@ -129,7 +129,7 @@ httpd = HTTPServer(server_address, myhandler)
 
 print("My own webserver is running successfully...")
 httpd.serve_forever()
-'''
+```
 ## OUTPUT:
 ![alt text](<Screenshot 2026-11-10 112517.png>)
 
