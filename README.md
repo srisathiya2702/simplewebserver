@@ -36,80 +36,104 @@ Start the server script and check for errors.
 Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
-<p><b>Sri Sathiya</b></p>
-<p><b>26018933</b></p>
+'''
+ http.server import HTTPServer, BaseHTTPRequestHandler
+from
+content = """
+<html>
+<head>
+    <title>Details of Laptop</title>
+</head>
+<body>
 
-<table border="2" cellpadding="10">
-    <caption>My Laptop Configuration</caption>
+<p><b>Sathya (26018933)</b></p>
 
-    <tr>
-        <th>S.No</th>
-        <th>Device Type</th>
-        <th>Device Info</th>
-    </tr>
+<table border="4" cellspacing="5" cellpadding="20">
+<caption><b>Laptop Device Information</b></caption>
 
-    <tr>
-        <td>1.</td>
-        <td>Device Name</td>
-        <td>HP Laptop 15</td>
-    </tr>
+<tr>
+    <th>S.No</th>
+    <th>Device Type</th>
+    <th>Device Information</th>
+</tr>
 
-    <tr>
-        <td>2.</td>
-        <td>Processor</td>
-        <td>Intel(R) Core(TM) i5-1235U (1.30 GHz)</td>
-    </tr>
+<tr>
+    <td>1</td>
+    <td>Device Name</td>
+    <td>HP-laptop 15</td>
+</tr>
 
-    <tr>
-        <td>3.</td>
-        <td>Installed RAM</td>
-        <td>8.0 GB (7.7 GB usable)</td>
-    </tr>
+<tr>
+    <td>2</td>
+    <td>Processor</td>
+    <td>Intel(R) Core(TM) 5 210H (2.20 GHz)</td>
+</tr>
 
-    <tr>
-        <td>4.</td>
-        <td>Graphics Card</td>
-        <td>Intel(R) UHD Graphics</td>
-    </tr>
+<tr>
+    <td>3</td>
+    <td>Installed RAM</td>
+    <td>16.0 GB (15.7 GB usable)</td>
+</tr>
 
-    <tr>
-        <td>5.</td>
-        <td>Storage</td>
-        <td>180 GB of 512 GB used</td>
-    </tr>
+<tr>
+    <td>4</td>
+    <td>Graphics Card</td>
+    <td>Intel(R) Graphics (256 MB)</td>
+</tr>
 
-    <tr>
-        <td>6.</td>
-        <td>Device ID</td>
-        <td>Different Device ID</td>
-    </tr>
+<tr>
+    <td>5</td>
+    <td>Storage</td>
+    <td>145 GB of 477 GB used</td>
+</tr>
 
-    <tr>
-        <td>7.</td>
-        <td>Product ID</td>
-        <td>Different Product ID</td>
-    </tr>
+<tr>
+    <td>6</td>
+    <td>Device ID</td>
+    <td>8A72C5D1-45F9-42B6-91A3-7D2E6F123456</td>
+</tr>
 
-    <tr>
-        <td>8.</td>
-        <td>System Type</td>
-        <td>64-bit operating system, x64-based processor</td>
-    </tr>
+<tr>
+    <td>7</td>
+    <td>Product ID</td>
+    <td>00342-42954-11675-AAOEM</td>
+</tr>
 
-    <tr>
-        <td>9.</td>
-        <td>Pen and Touch</td>
-        <td>No pen or touch input is available</td>
-    </tr>
+<tr>
+    <td>8</td>
+    <td>System Type</td>
+    <td>64-bit operating system, x64-based processor</td>
+</tr>
+
+<tr>
+    <td>9</td>
+    <td>Pen and Touch</td>
+    <td>No pen or touch input is available for this display</td>
+</tr>
 
 </table>
 </body>
 </html>
+"""
 
+class myhandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        print("Client request received")
+        self.send_response(200)
+        self.send_header('content-type', 'text/html; charset=utf-8')
+        self.end_headers()
+        self.wfile.write(content.encode())
+
+server_address = ('', 8000)
+httpd = HTTPServer(server_address, myhandler)
+
+print("My own webserver is running successfully...")
+httpd.serve_forever()
+'''
 ## OUTPUT:
-<img width="1910" height="788" alt="Screenshot 2026-11-06 110337" src="https://github.com/user-attachments/assets/3e23593c-2ab1-4936-bc31-74b2a1c70151" />
+![alt text](<Screenshot 2026-11-10 112517.png>)
 
-<img width="1541" height="817" alt="Screenshot 2026-11-06 110957" src="https://github.com/user-attachments/assets/49111972-07bb-4127-b455-e64d04f170fd" />
+![alt text](<Screenshot 2026-11-10 112428.png>)
 
 
 
