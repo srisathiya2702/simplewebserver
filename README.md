@@ -1,5 +1,5 @@
 # EX01 Developing a Simple Webserver
-## Date:4.11.26
+## Date:29.09.26
 
 ## AIM:
 To develop a simple webserver to serve html pages and display the Windows Specifications of your Laptop.
@@ -37,78 +37,55 @@ Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
 ```
- http.server import HTTPServer, BaseHTTPRequestHandler
-from
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
 content = """
 <html>
 <head>
-    <title>Details of Laptop</title>
+    <title>Device Properties</title>
 </head>
-<body>
+<body bgcolor="lavender">
 
-<p><b>Sathya (26018933)</b></p>
+<h1 align="center">Sathya</h1>
+<h2 align="center">26018933</h2>
 
-<table border="4" cellspacing="5" cellpadding="20">
-<caption><b>Laptop Device Information</b></caption>
+<table border="1" cellspacing="10" cellpadding="10">
+<caption>Device Properties</caption>
 
-<tr>
+<tr bgcolor="yellow">
     <th>S.No</th>
-    <th>Device Type</th>
-    <th>Device Information</th>
+    <th>Device Info</th>
+    <th>Device Property</th>
 </tr>
 
 <tr>
     <td>1</td>
     <td>Device Name</td>
-    <td>HP-laptop 15</td>
+    <td>HP Laptop 15</td>
 </tr>
 
 <tr>
     <td>2</td>
-    <td>Processor</td>
-    <td>Intel(R) Core(TM) 5 210H (2.20 GHz)</td>
+    <td>Installed RAM</td>
+    <td>8.0 GB (7.7 GB usable)</td>
 </tr>
 
 <tr>
     <td>3</td>
-    <td>Installed RAM</td>
-    <td>16.0 GB (15.7 GB usable)</td>
+    <td>Graphics Card</td>
+    <td>Intel UHD Graphics (256 MB)</td>
 </tr>
 
 <tr>
     <td>4</td>
-    <td>Graphics Card</td>
-    <td>Intel(R) Graphics (256 MB)</td>
+    <td>Storage</td>
+    <td>150 GB of 512 GB used</td>
 </tr>
 
 <tr>
     <td>5</td>
-    <td>Storage</td>
-    <td>145 GB of 477 GB used</td>
-</tr>
-
-<tr>
-    <td>6</td>
-    <td>Device ID</td>
-    <td>8A72C5D1-45F9-42B6-91A3-7D2E6F123456</td>
-</tr>
-
-<tr>
-    <td>7</td>
-    <td>Product ID</td>
-    <td>00342-42954-11675-AAOEM</td>
-</tr>
-
-<tr>
-    <td>8</td>
-    <td>System Type</td>
-    <td>64-bit operating system, x64-based processor</td>
-</tr>
-
-<tr>
-    <td>9</td>
-    <td>Pen and Touch</td>
-    <td>No pen or touch input is available for this display</td>
+    <td>Processor</td>
+    <td>Intel Core i5 (2.40 GHz)</td>
 </tr>
 
 </table>
@@ -131,10 +108,9 @@ print("My own webserver is running successfully...")
 httpd.serve_forever()
 ```
 ## OUTPUT:
-![alt text](<Screenshot 2026-11-10 112517.png>)
+![alt text](<Screenshot 2026-11-14 142143-1.png>)
 
-![alt text](<Screenshot 2026-11-10 112428.png>)
-
+![alt text](<Screenshot 2026-11-14 142243.png>)
 
 
 ## RESULT:
